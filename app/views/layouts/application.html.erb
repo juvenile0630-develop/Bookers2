@@ -32,8 +32,26 @@
       </nav>
     </div>
   </header>
+<div class='body'>
+  <div class='container'>
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
 
+  <% if session[:error].present? %>
+    <div id="error_explanation">
+      <h2><%= session[:error].count %> errors prohibited this book from being saved:</h2>
+      <ul style="color: red">
+      <% session[:error].each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% session[:error] = nil %>
+  <% end %>
     <%= yield %>
+  </div>
+</div>
 
 <footer>
   <div class='container'>
@@ -44,5 +62,6 @@
     </div>
   </div>
 </footer>
+
   </body>
 </html>

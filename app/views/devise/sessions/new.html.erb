@@ -1,35 +1,30 @@
-<div class='body'>
-  <div class='container'>
-    <p id="notice"></p>
-  	<h2>Log in</h2>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-      <label for="user_name">Name</label><br />
-      <div class="row">
-        <div class="col-xs-2">
-        <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputName" %>
-        </div>
-      </div>
-      <label for="user_password">Password</label><br />
-      <div class="row">
-        <div class="col-xs-2">
-        <%= f.password_field :password, autocomplete: "off", class:"form-control", id:"inputPassword" %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-2">
-        <%= f.check_box :remember_me ,{},checked_value = "true",unchecked_value = "false" %>
-        <label for="user_remember_me">Remember me</label>
-        </div>
-      </div>
-
-      <div class="row actions">
-        <div class="col-xs-1">
-          <%= f.submit "Log in", class:"btn btn-primary " %>
-        </div>
-      </div>
-    <% end %> 
-    <a class="sign_up" href="/users/sign_up">Sign up</a><br />
-    <a href="/users/password/new">Forgot your password?</a><br />
+<h2>Log in</h2>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <label for="user_name">Name</label><br />
+  <div class="row">
+    <div class="col-xs-2">
+    <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputName" %>
+    </div>
   </div>
-</div>
+  <label for="user_password">Password</label><br />
+  <div class="row">
+    <div class="col-xs-2">
+    <%= f.password_field :password, autocomplete: "off", class:"form-control", id:"inputPassword" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2">
+    <%= f.check_box :remember_me ,{},checked_value = "true",unchecked_value = "false" %>
+    <label for="user_remember_me">Remember me</label>
+    </div>
+  </div>
+
+  <div class="row actions">
+    <div class="col-xs-1">
+      <%= f.submit "Log in", class:"btn btn-primary " %>
+    </div>
+  </div>
+<% end %> 
+<a class="sign_up" href="/users/sign_up">Sign up</a><br />
+<a href="/users/password/new">Forgot your password?</a><br />

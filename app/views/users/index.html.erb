@@ -1,17 +1,12 @@
-<div class='body'>
-  <div class='container'>
-    <p id="notice"></p>
-    <div class='row'>
-      <div class='col-xs-3'>
-        <%= render 'users/userinfo', user: '@user' %>
+<div class='row'>
+  <div class='col-xs-3'>
+    <%= render 'users/userinfo', user: '@user' %>
 
-        <%= render 'books/newbook', book: '@book' %>
-      </div>
+    <%= render 'books/newbook', book: '@book' %>
+  </div>
 
-      <div class='col-xs-9'>
-        <%= render 'users/userlist', user: '@users' %>
-      </div>
-    </div>
+  <div class='col-xs-9'>
+    <%= render 'users/userlist', user: '@users' %>
   </div>
 </div>
 

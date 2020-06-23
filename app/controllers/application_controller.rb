@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   def index
     @users = User.all
+    @book = Book.new
   end
 
 protected
