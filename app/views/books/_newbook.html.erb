@@ -1,0 +1,32 @@
+<h2>New book</h2>
+<%= form_with model: @book, url: books_path do |f| %>
+  <% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= I18n.t("errors.messages.not_saved",
+                   count: resource.errors.count,
+                   resource: resource.class.model_name.human.downcase)
+         %>
+      </h2>
+      <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field row">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus: true, autocomplete: "off", class:"col-xs-12 book_title" %>
+  </div>
+
+  <div class="field row">
+    <%= f.label :opinion %><br />
+    <%= f.text_area :body, autofocus: true, autocomplete: "off", class:"col-xs-12 book_body" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create Book", class:"btn btn-primary col-xs-12" %>
+  </div>
+<% end %>

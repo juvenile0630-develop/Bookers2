@@ -1,0 +1,16 @@
+<h2>Book detail</h2>
+
+<table class='table table-hover table-inverse'>
+  <tbody>
+    <tr>
+    <td>
+      <%= attachment_image_tag @b.user, :profile_image, size:"40x40", format: 'jpeg', class: "attachment user profile-img", fallback: "no_image.jpg" %><br>
+      <%= @b.user.name %>
+    </td>
+    <td><%= link_to @b.title, book_path(@b.id), method: :get %></td>
+    <td><%= @b.body %></td>
+    <td><%= link_to "Edit", edit_book_path(@b.id), class:"btn-sm btn-success" %></td>
+    <td><%= link_to "Destroy", book_path(@b.id), method: :delete, class:"btn-sm btn-danger", "data-confirm" => "本当に消しますか？" %></td>
+    </tr>
+  </tbody>
+</table>
