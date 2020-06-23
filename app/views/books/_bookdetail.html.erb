@@ -4,8 +4,10 @@
   <tbody>
     <tr>
     <td>
-      <%= attachment_image_tag @b.user, :profile_image, size:"40x40", format: 'jpeg', class: "attachment user profile-img", fallback: "no_image.jpg" %><br>
-      <%= @b.user.name %>
+      <%= link_to user_path(@b.user) do %>
+        <%= attachment_image_tag @b.user, :profile_image, size:"40x40", format: 'jpeg', class: "attachment user profile-img", fallback: "no_image.jpg" %><br>
+        <%= @b.user.name %>
+      <% end %>
     </td>
     <td><%= link_to @b.title, book_path(@b.id), method: :get %></td>
     <td><%= @b.body %></td>
